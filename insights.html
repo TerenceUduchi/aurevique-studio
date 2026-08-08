@@ -1,0 +1,399 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon.png"
+    />
+    <title>Insights — Aurevique Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!--========== NAVIGATION ==========-->
+    <header class="sitenav">
+      <div class="brand">
+        <div class="logo">
+          <img src="./images/logo.png" alt="Aurevique Studio Logo" />
+        </div>
+        <a href="index.html" class="sitenav-brand">
+          <span class="brand-name">AUREVIQUE</span>
+          <span class="brand-subtitle">STUDIO</span>
+        </a>
+      </div>
+      <nav class="nav-links" id="navLinks">
+        <a href="./index.html">Home</a>
+        <a href="./services.html">Services</a>
+        <a href="./portfolio.html">Portfolio</a>
+        <a href="./about.html">About</a>
+        <a href="./insights.html" class="active">Insights</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+      <a href="./contact.html" class="btn-quote">Get a Quote</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </header>
+
+    <!--========== INSIGHTS HERO ==========-->
+    <section class="insights-hero">
+      <div class="insights-hero-text">
+        <p class="section-tag">INSIGHTS</p>
+        <h1>Ideas. Trends.<br /><span>Inspiration.</span></h1>
+        <p>
+          Explore insights on branding, design, fashion, and digital strategy to
+          help your brand grow with purpose and impact.
+        </p>
+      </div>
+      <div class="insights-hero-image">
+        <img src="./images/insights-hero.png" alt="Aurevique Studio Journal" />
+      </div>
+    </section>
+
+    <!--========== FILTER + SEARCH ==========-->
+    <section class="insights-filter-section">
+      <div class="insights-filter-row">
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">
+            All Insights
+          </button>
+          <button class="filter-btn" data-filter="branding">Branding</button>
+          <button class="filter-btn" data-filter="web-design">
+            Web Design
+          </button>
+          <button class="filter-btn" data-filter="fashion">Fashion</button>
+          <button class="filter-btn" data-filter="marketing">Marketing</button>
+          <button class="filter-btn" data-filter="strategy">Strategy</button>
+          <button class="filter-btn" data-filter="industry-news">
+            Industry News
+          </button>
+        </div>
+        <div class="insights-search">
+          <input type="text" placeholder="Search articles..." />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+
+      <!--========== FEATURED ARTICLE ==========-->
+      <a href="#" class="featured-article">
+        <div class="featured-image">
+          <img
+            src="./images/insights/featured-article.png"
+            alt="Building Timeless Brands"
+          />
+        </div>
+        <div class="featured-text">
+          <p class="portfolio-cat">FEATURED ARTICLE</p>
+          <h2>Building Timeless Brands in a Fast-Paced World</h2>
+          <p class="featured-desc">
+            How luxury fashion brands can stay relevant by combining heritage,
+            storytelling, and modern design.
+          </p>
+          <div class="article-meta">
+            <img
+              src="./images/author.png"
+              alt="Author"
+              class="author-avatar"
+            />
+            <div>
+              <p class="author-name">By Aurevique Studio</p>
+              <span>May 12, 2026 · 6 min read</span>
+            </div>
+          </div>
+          <span class="btn-primary small">Read More →</span>
+        </div>
+      </a>
+
+      <!--========== INSIGHTS GRID ==========-->
+      <div class="insights-full-grid">
+       <a href="#" class="insight-card">
+      <img src="./images/insights/brand-trust.png" alt="How Luxury Brands Build Trust Online">
+      <div class="insight-text">
+        <h4>How Luxury Brands Build Trust Online</h4>
+        <p class="insight-meta">JUNE 1, 2026 &nbsp;·&nbsp; BRANDING</p>
+        <span class="read-article">READ ARTICLE →</span>
+      </div>
+    </a>
+
+    <a href="#" class="insight-card">
+      <img src="./images/insights/website-trends.png" alt="5 Website Trends in Fashion">
+      <div class="insight-text">
+        <h4>5 Website Trends in Fashion</h4>
+        <p class="insight-meta">MAY 25, 2026 &nbsp;·&nbsp; WEB DESIGN</p>
+        <span class="read-article">READ ARTICLE →</span>
+      </div>
+    </a>
+
+    <a href="#" class="insight-card">
+      <img src="./images/insights/brand-identity.png" alt="Creating a Strong Brand Identity">
+      <div class="insight-text">
+        <h4>Creating a Strong Brand Identity</h4>
+        <p class="insight-meta">MAY 18, 2026 &nbsp;·&nbsp; STRATEGY</p>
+        <span class="read-article">READ ARTICLE →</span>
+      </div>
+    </a>
+
+        <a href="#" class="insight-full-card" data-category="branding">
+          <img
+            src="./images/insights/strong-identity.png"
+            alt="The Power of a Strong Visual Identity"
+          />
+          <div class="insight-full-text">
+            <p class="portfolio-cat">BRANDING</p>
+            <h4>The Power of a Strong Visual Identity</h4>
+            <p class="insight-full-desc">
+              Why your brand identity is more than just a logo—and how it shapes
+              perception.
+            </p>
+            <div class="article-meta small">
+              <img
+                src="./images/author.png"
+                alt="Author"
+                class="author-avatar"
+              />
+              <div>
+                <p class="author-name">By Aurevique Studio</p>
+                <span>Apr 28, 2026 · 5 min read</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="insight-full-card" data-category="web-design">
+          <img
+            src="./images/insights/websites-convert.png"
+            alt="Creating Websites That Convert and Inspire"
+          />
+          <div class="insight-full-text">
+            <p class="portfolio-cat">WEB DESIGN</p>
+            <h4>Creating Websites That Convert and Inspire</h4>
+            <p class="insight-full-desc">
+              Good design isn't just beautiful—it guides, engages, and drives
+              action.
+            </p>
+            <div class="article-meta small">
+              <img
+                src="./images/author.png"
+                alt="Author"
+                class="author-avatar"
+              />
+              <div>
+                <p class="author-name">By Aurevique Studio</p>
+                <span>Apr 20, 2026 · 7 min read</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="insight-full-card" data-category="fashion">
+          <img
+            src="./images/insights/fashion-trends.png"
+            alt="2025 Fashion Trends Every Brand Should Know"
+          />
+          <div class="insight-full-text">
+            <p class="portfolio-cat">FASHION</p>
+            <h4>2026 Fashion Trends Every Brand Should Know</h4>
+            <p class="insight-full-desc">
+              Key trends shaping the fashion industry and how brands can adapt
+              creatively.
+            </p>
+            <div class="article-meta small">
+              <img
+                src="./images/author.png"
+                alt="Author"
+                class="author-avatar"
+              />
+              <div>
+                <p class="author-name">By Aurevique Studio</p>
+                <span>Apr 15, 2026 · 4 min read</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="insight-full-card" data-category="marketing">
+          <img
+            src="./images/insights/digital-campaigns.png"
+            alt="Digital Campaigns That Drive Real Results"
+          />
+          <div class="insight-full-text">
+            <p class="portfolio-cat">MARKETING</p>
+            <h4>Digital Campaigns That Drive Real Results</h4>
+            <p class="insight-full-desc">
+              Strategies for creating impactful campaigns that connect and
+              convert.
+            </p>
+            <div class="article-meta small">
+              <img
+                src="./images/author.png"
+                alt="Author"
+                class="author-avatar"
+              />
+              <div>
+                <p class="author-name">By Aurevique Studio</p>
+                <span>Apr 8, 2026 · 5 min read</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="insight-full-card" data-category="strategy">
+          <img
+            src="./images/insights/brand-strategy.png"
+            alt="From Vision to Execution: A Brand Strategy Guide"
+          />
+          <div class="insight-full-text">
+            <p class="portfolio-cat">STRATEGY</p>
+            <h4>From Vision to Execution: A Brand Strategy Guide</h4>
+            <p class="insight-full-desc">
+              A step-by-step approach to turning your brand vision into a
+              winning strategy.
+            </p>
+            <div class="article-meta small">
+              <img
+                src="./images/author.png"
+                alt="Author"
+                class="author-avatar"
+              />
+              <div>
+                <p class="author-name">By Aurevique Studio</p>
+                <span>Apr 30, 2026 · 6 min read</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="insight-full-card" data-category="industry-news">
+          <img
+            src="./images/insights/sustainability.png"
+            alt="Sustainability in Fashion: The Future is Now"
+          />
+          <div class="insight-full-text">
+            <p class="portfolio-cat">INDUSTRY NEWS</p>
+            <h4>Sustainability in Fashion: The Future is Now</h4>
+            <p class="insight-full-desc">
+              Why sustainable practices are no longer optional—and how brands
+              can lead.
+            </p>
+            <div class="article-meta small">
+              <img
+                src="./images/author.png"
+                alt="Author"
+                class="author-avatar"
+              />
+              <div>
+                <p class="author-name">By Aurevique Studio</p>
+                <span>Mar 25, 2026 · 5 min read</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!--========== PAGINATION ==========-->
+      <div class="pagination">
+        <button class="page-arrow">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="page-num active">1</button>
+        <button class="page-num">2</button>
+        <button class="page-num">3</button>
+        <span class="page-dots">…</span>
+        <button class="page-num">8</button>
+        <button class="page-arrow">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!--========== STAY INSPIRED NEWSLETTER ==========-->
+    <section class="newsletter">
+      <i class="fa-regular fa-envelope newsletter-icon"></i>
+      <div class="newsletter-text">
+        <h2>Stay Inspired</h2>
+        <p>
+          Get the latest insights, trends, and tips delivered straight to your
+          inbox.
+        </p>
+      </div>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email address" required />
+        <button type="submit">SUBSCRIBE</button>
+      </form>
+    </section>
+
+    <!--========== FOOTER ==========-->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <img src="./images/logo.png" alt="Aurevique Studio Logo" />
+          </div>
+          <p class="footer-brand-name">AUREVIQUE STUDIO</p>
+          <p>
+            A creative fashion and lifestyle technology agency helping brands
+            stand out, connect, and grow in the digital world.
+          </p>
+          <div class="footer-socials">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+            <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>SERVICES</h4>
+          <a href="./brand-identity.html">Brand Identity</a>
+          <a href="./website-design.html">Website Design</a>
+          <a href="./ecommerce-solutions.html">E-commerce Solutions</a>
+          <a href="./content-creation.html">Content Creation</a>
+          <a href="./digital-strategy.html">Digital Strategy</a>
+        </div>
+        <div class="footer-col">
+          <h4>PORTFOLIO</h4>
+          <a href="./portfolio.html">All Projects</a>
+          <a href="./portfolio.html#branding">Branding</a>
+          <a href="./portfolio.html#web-design">Web Design</a>
+        </div>
+        <div class="footer-col">
+          <h4>COMPANY</h4>
+          <a href="./about.html">About Us</a>
+          <a href="./insights.html">Insights</a>
+          <a href="./careers.html">Careers</a>
+        </div>
+        <div class="footer-col">
+          <h4>LET'S CONNECT</h4>
+          <a href="aureviquestudio@gmail.com"
+            ><i class="fa-solid fa-envelope"></i> aureviquestudio@gmail.com</a
+          >
+          <a href="tel:+2347078214530"
+            ><i class="fa-solid fa-phone"></i> +234 707 821 4530</a
+          >
+          <a href="#"
+            ><i class="fa-solid fa-location-dot"></i> Lagos, Nigeria</a
+          >
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Aurevique Studio. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
