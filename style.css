@@ -1180,6 +1180,18 @@ ul{
     }
 }
 
+@media(max-width: 700px){
+    .about-hero{
+        flex-direction: column;
+    }
+    .about-hero-text, .about-hero-image{
+        width: 100%;
+    }
+    .about-hero-image{
+        height: 280px;
+    }
+}
+
 /*========== ABOUT HERO ==========*/
 
 .about-hero{
@@ -2795,5 +2807,59 @@ ul{
     }
     .portfolio-grid{
         grid-template-columns: 1fr;
+    }
+}
+
+/*========== GLOBAL MOBILE PADDING FIX ==========*/
+/* Every major section uses a fixed 50px side padding with no mobile
+   reduction anywhere else in this file. On phones (<=600px) that eats
+   100px total width, leaving as little as ~220px of usable content
+   space. This tightens side padding at two breakpoints without
+   touching each section's other rules. */
+
+@media(max-width: 600px){
+    .about-hero-text, .case-study-text, .contact-hero-text,
+    .final-cta-text, .hero-content, .insights-hero-text, .legal-content,
+    .portfolio-hero-text, .service-detail-body, .error-page,
+    .about-testimonials, .process, .faq, .projects,
+    .insights-filter-section, .filter-section, .site-footer,
+    .contact-main, .insights, .instagram-strip, .legal-hero, .team,
+    .mvv, .sitenav, .newsletter, .services, .our-story,
+    .portfolio-highlights, .process.dark, .contact-secondary,
+    .service-detail-hero, .services-full, .services-hero, .stats-bar,
+    .trusted-by, .why-choose-full, .why-choose{
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+@media(max-width: 480px){
+    .newsletter-form{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .newsletter-form input{
+        width: 100%;
+        max-width: 280px;
+    }
+    .insights-search input{
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media(max-width: 400px){
+    .about-hero-text, .case-study-text, .contact-hero-text,
+    .final-cta-text, .hero-content, .insights-hero-text, .legal-content,
+    .portfolio-hero-text, .service-detail-body, .error-page,
+    .about-testimonials, .process, .faq, .projects,
+    .insights-filter-section, .filter-section, .site-footer,
+    .contact-main, .insights, .instagram-strip, .legal-hero, .team,
+    .mvv, .sitenav, .newsletter, .services, .our-story,
+    .portfolio-highlights, .process.dark, .contact-secondary,
+    .service-detail-hero, .services-full, .services-hero, .stats-bar,
+    .trusted-by, .why-choose-full, .why-choose{
+        padding-left: 16px;
+        padding-right: 16px;
     }
 }
