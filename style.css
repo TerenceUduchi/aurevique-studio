@@ -38,6 +38,10 @@
     /* Status colors */
     --error: #d9534f;
     --success: #1e7e34;
+
+    /* Third-party brand colors */
+    --whatsapp: #25D366;
+    --whatsapp-hover: #1ebc59;
 }
 
 *{
@@ -1007,6 +1011,26 @@ ul{
     cursor: pointer;
 }
 
+.newsletter-form button:disabled{
+    opacity: .7;
+    cursor: not-allowed;
+}
+
+.newsletter-status{
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    min-height: 16px;
+}
+
+.newsletter-status.success{
+    color: var(--accent);
+}
+
+.newsletter-status.error{
+    color: var(--error);
+}
+
 /*========== FINAL CTA ==========*/
 
 .final-cta{
@@ -1086,6 +1110,11 @@ ul{
 .footer-socials a{
     color: var(--white);
     font-size: 14px;
+}
+
+.footer-socials a[href*="whatsapp"]:hover,
+.info-socials a[href*="whatsapp"]:hover{
+    color: var(--whatsapp);
 }
 
 .footer-col h4{
@@ -1498,6 +1527,101 @@ ul{
     color: var(--ink);
     font-size: 13px;
 }
+
+/*========== RESPONSIVE ==========*/
+
+@media(max-width: 1000px){
+    .about-hero{
+        flex-direction: column;
+    }
+
+    .about-hero-text,
+    .about-hero-image{
+        width: 100%;
+    }
+
+    .about-hero-image{
+        height: 400px;
+    }
+
+    .mvv{
+        grid-template-columns: 1fr;
+    }
+
+    .stats-bar{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-grid-full{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media(max-width: 700px){
+    .about-hero-text{
+        padding: 40px 25px;
+    }
+
+    .about-hero-text h1{
+        font-size: 30px;
+    }
+
+    .about-hero-image{
+        height: 300px;
+        
+    }
+    .about-hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+    
+
+    .our-story{
+        padding: 45px 25px 30px;
+    }
+
+    .mvv{
+        grid-template-columns: 1fr;
+        padding: 20px 25px 40px;
+    }
+
+    .stats-bar{
+        grid-template-columns: 1fr 1fr;
+        margin: 0 20px 10px;
+    }
+
+    .why-grid-full{
+        grid-template-columns: 1fr;
+    }
+
+    .team{
+        padding: 50px 25px;
+    }
+
+    .team-head{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .team-grid{
+        grid-template-columns: 1fr;
+    }
+    .team-card img {
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+        object-position: top;
+    }
+}
+
+
 
 /*========== SERVICES HERO ==========*/
 
@@ -2030,6 +2154,15 @@ ul{
     margin-bottom: 2px;
 }
 
+a.info-link{
+    display: block;
+    text-decoration: none;
+}
+
+a.info-link:hover{
+    color: var(--whatsapp);
+}
+
 .info-block span{
     font-size: 11px;
     color: var(--gray-550);
@@ -2076,7 +2209,7 @@ ul{
     width: 60%;
     height: 100%;
     background: rgba(var(--white-rgb),.92);
-    padding: 30px;
+    padding: 22px 26px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2084,15 +2217,27 @@ ul{
 
 .quick-chat-overlay h3{
     font-family: "Playfair Display", serif;
-    font-size: 19px;
+    font-size: 17px;
     color: var(--ink);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .quick-chat-overlay p{
-    font-size: 12px;
+    font-size: 11px;
     color: var(--gray-650);
-    margin-bottom: 16px;
+    margin-bottom: 12px;
+}
+
+.quick-chat-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.quick-chat-buttons .btn-outline-sm{
+    padding: 7px 12px;
+    font-size: 10.5px;
+    white-space: nowrap;
 }
 
 .btn-outline-sm{
@@ -2106,6 +2251,17 @@ ul{
     font-size: 12px;
     font-weight: 700;
     width: fit-content;
+}
+
+.btn-whatsapp{
+    background: var(--whatsapp);
+    border-color: var(--whatsapp);
+    color: var(--white);
+}
+
+.btn-whatsapp:hover{
+    background: var(--whatsapp-hover);
+    border-color: var(--whatsapp-hover);
 }
 
 .map-card{
@@ -2673,9 +2829,10 @@ ul{
 }
 
 .case-study-image img{
-    width: 100%;
+    width: 90%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
 }
 
 .case-study-text{

@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initMobileNav();
   initFaqAccordion();
   initContactForm();
+  initNewsletterForm();
 });
 
 /* ---------- Mobile Navigation ---------- */
@@ -117,27 +118,44 @@ function initContactForm() {
       return;
     }
 
-    // No backend is wired up yet — simulate a submission so the
-    // experience feels complete, and surface a clear success state.
+    // Submit to Web3Forms so messages actually land in the studio inbox.
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin"></i>';
     }
 
-    window.setTimeout(function () {
-      showStatus(
-        statusEl,
-        "Thank you! Your message has been sent — we'll be in touch within 24 hours.",
-        "success"
-      );
-      form.reset();
-      if (charCount) charCount.textContent = "0 / " + (textarea ? textarea.getAttribute("maxlength") : 500);
-
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Send Message <i class="fa-solid fa-arrow-right"></i>';
-      }
-    }, 900);
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(Object.fromEntries(new FormData(form))),
+    })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data.success) {
+          showStatus(
+            statusEl,
+            "Thank you! Your message has been sent — we'll be in touch within 24 hours.",
+            "success"
+          );
+          form.reset();
+          if (charCount) charCount.textContent = "0 / " + (textarea ? textarea.getAttribute("maxlength") : 500);
+        } else {
+          showStatus(statusEl, "Something went wrong. Please try again or email us directly.", "error");
+        }
+        setTimeout(function () {
+          statusEl.textContent ="";
+          statusEl.className ="";
+        }, 5000)
+      })
+      .catch(function () {
+        showStatus(statusEl, "Something went wrong. Please try again or email us directly.", "error");
+      })
+      .finally(function () {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Send Message <i class="fa-solid fa-arrow-right"></i>';
+        }
+      });
   });
 }
 
@@ -207,6 +225,60 @@ function clearFieldError(field) {
 
 function showStatus(statusEl, message, type) {
   if (!statusEl) return;
+  const baseClass = statusEl.dataset.baseClass || statusEl.className.split(" ")[0] || "form-status";
+  statusEl.dataset.baseClass = baseClass;
   statusEl.textContent = message;
-  statusEl.className = "form-status " + type;
+  statusEl.className = type ? baseClass + " " + type : baseClass;
+}
+
+/* ---------- Newsletter Subscribe ---------- */
+function initNewsletterForm() {
+  const form = document.getElementById("newsletterForm");
+  if (!form) return;
+
+  const emailInput = form.querySelector('input[type="email"]');
+  const statusEl = document.getElementById("newsletterStatus");
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = emailInput ? emailInput.value.trim() : "";
+
+    if (!email || !emailPattern.test(email)) {
+      showStatus(statusEl, "Please enter a valid email address.", "error");
+      return;
+    }
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "SUBSCRIBING...";
+    }
+
+    // No backend is wired up yet — simulate the subscription so the
+    // experience feels complete, and confirm clearly to the user.
+    window.setTimeout(function () {
+      showStatus(statusEl, "You have subscribed successfully!", "success");
+      form.reset();
+      setTimeout(function () {
+          statusEl.textContent ="";
+          statusEl.className ="";
+        }, 5000)
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "SUBSCRIBE";
+      }
+    }, 700);
+  });
+   
+
+  if (emailInput) {
+    emailInput.addEventListener("input", function () {
+      if (statusEl && statusEl.classList.contains("error")) {
+        showStatus(statusEl, "", "");
+      }
+    });
+  }
 }
